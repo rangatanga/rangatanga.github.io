@@ -1,3 +1,7 @@
+body {
+  font-family: "Trebuchet MS", Sans-Serif;
+}
+
 .instrumentTableHeaderRow {
 }
 
@@ -16,7 +20,7 @@
 }
 
 .instrumentBlockSelect {
-    min-width: 70;
+    min-width: 75;
     min-height: 30;
     font-size: 30;
 
@@ -27,5 +31,106 @@
     height: 80%;
 }
 
-.blockSelectA {
+@font-face {
+    font-family: 'icomoon';
+    src:  url('assets/fonts/icomoon.eot?1dz6mr');
+    src:  url('assets/fonts/icomoon.eot?1dz6mr#iefix') format('embedded-opentype'),
+      url('assets/fonts/icomoon.ttf?1dz6mr') format('truetype'),
+      url('assets/fonts/icomoon.woff?1dz6mr') format('woff'),
+      url('assets/fonts/icomoon.svg?1dz6mr#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+.blockSelect {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.instrumentBlockOpts {
+  background-image: url('assets/images/options.svg');
+  min-width: 15;
+  min-height: 35;
+  vertical-align: top;
+}
+
+.instrumentBlockOptsImg {
+  width: 10;
+  height: 31;
+}
+
+.blockOptionsDialogButtons {
+  width: 100%;
+  text-align: center;
+  padding-top: 10;
+}
+
+.blockOptionsContainer {
+  padding-top: 10;
+}
+
+#accentPatternBox {
+  border-style: inset;
+  border-width: 2px;
+  border-color: gray;
+  border-radius: 3px;
+  width: 100%;
+  text-align: center;
+}
+
+.accentCheckbox {
+  -webkit-appearance: initial;
+  appearance: initial;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: #e3000b;
+  position: relative;
+  margin-right: 10px;
+}
+
+.accentCheckbox:disabled {
+  -webkit-appearance: initial;
+  appearance: initial;
+  width: 20px;
+  height: 20px;
+  border: none;
+  background: #dddddd;
+  position: relative;
+}
+
+.accentCheckbox:checked:after {
+  /* Heres your symbol replacement - this is a tick in Unicode. */
+  content: "\003E";
+  color: #fff;
+  /* The following positions my tick in the center, 
+   * but you could just overlay the entire box
+   * with a full after element with a background if you want to */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  /*
+   * If you want to fully change the check appearance, use the following:
+   * content: " ";
+   * width: 100%;
+   * height: 100%;
+   * background: blue;
+   * top: 0;
+   * left: 0;
+   */
 }
