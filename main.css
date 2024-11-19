@@ -2,34 +2,153 @@ body {
   font-family: "Trebuchet MS", Sans-Serif;
 }
 
-.instrumentTableHeaderRow {
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+.flex-container-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-container-column {
+  display: flex;
+  flex-direction: column;
+}
+
+#main {
+  order: 2;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 100%;
+}
+
+#sidebar_left {
+  order: 1;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 100px;
+}
+
+#instruments {
+  order: 1;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 160px;
+
+}
+
+#bars {
+  order: 2;
+  flex-grow: 0;
+  flex-shrink: 0;
+  max-width: 1200px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+#stave-view {
+  width: 1440px;
+  height: 600px;
+  max-height: 600px;
+  overflow-y: auto;
+  white-space: nowrap;
+  position: relative;
+}
+
+#stave {
+}
+
+.stave-bar-number {
+  font: italic 2px serif;
+  font-weight: lighter;
+}
+
+.group-title {
+  min-height: 36;
+  font-size: 20;
+  font-weight: bold;
+}
+
+
+.sub-group-title1 {
+  min-height: 35;
+  font-size: 18;
+}
+
+.patternButton {
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.bar-table {
+  border: 1px solid #e3000b;
+}
+
+#bar-delete {
+  order: 1;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 40px;
+}
+
+#bar-text {
+  order: 2;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 100%;
+}
+
+#bar-buttons {
+  order: 3;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 90px;
+}
+
+.barButtonImg {
+  width: 15px;
+  height: 15px;
+  align-content: center;
+  text-align: center;
+}
+
+
+#add-instrument-select {
+  width: 150px;
 }
 
 .instrumentTableHeaderCell {
     min-height: 50;
-    font-size: 24;
+    font-size: 20;
 }
 
-.instrumentTableRow {
-
-}
 
 .instrumentTableCell {
-    min-height: 50;
-    font-size: 22;
+    font-size: 18;
+}
+
+.addInstrumentTableCell {
+  font-size: 18;
+}
+
+.optionsTableCell {
+  font-size: 16;
+  text-align: right;
 }
 
 .instrumentBlockSelect {
     min-width: 75;
-    min-height: 30;
-    font-size: 30;
+    font-size: 24;
 
 }
 
-.stave {
-    width: 90%;
-    height: 80%;
-}
+
 
 @font-face {
     font-family: 'icomoon';
@@ -58,29 +177,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.instrumentBlockOpts {
-  background-image: url('assets/images/options.svg');
-  min-width: 15;
-  min-height: 35;
-  vertical-align: top;
-}
 
-.instrumentBlockOptsImg {
+.bar-settings {
   width: 10;
-  height: 31;
+  height: 15;
 }
-
-.blockOptionsDialogButtons {
+.subBeatOptionsDialogButtons {
   width: 100%;
   text-align: center;
   padding-top: 10;
 }
 
-.blockOptionsContainer {
-  padding-top: 10;
-}
 
-#accentPatternBox {
+.embellishPatternBox {
   border-style: inset;
   border-width: 2px;
   border-color: gray;
@@ -89,7 +198,7 @@ body {
   text-align: center;
 }
 
-.accentCheckbox {
+.embellishCheckbox {
   -webkit-appearance: initial;
   appearance: initial;
   width: 20px;
@@ -100,7 +209,7 @@ body {
   margin-right: 10px;
 }
 
-.accentCheckbox:disabled {
+.embellishCheckbox:disabled {
   -webkit-appearance: initial;
   appearance: initial;
   width: 20px;
@@ -110,7 +219,7 @@ body {
   position: relative;
 }
 
-.accentCheckbox:checked:after {
+.embellishCheckbox:checked:after {
   /* Heres your symbol replacement - this is a tick in Unicode. */
   content: "\003E";
   color: #fff;
